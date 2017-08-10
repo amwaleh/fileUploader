@@ -391,3 +391,4 @@ ENV/
 templates/
 lastUpdate.json
 media/
+*.sqlite3
