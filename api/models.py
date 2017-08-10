@@ -16,3 +16,7 @@ class File(models.Model):
     title= models.TextField(blank=True)
     file= models.FileField(blank=False, upload_to='uploads/', validators=[validate_file_extension])
 
+    def downloadPath(self,**kwargs):
+        host = os.environ.get('HOST', 'http://127.0.0.1')
+        port =os.environ.get('PORT', '8000')
+        return '{}:{}/download/{}'.format(host, port, self.id)

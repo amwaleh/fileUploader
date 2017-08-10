@@ -20,22 +20,20 @@ from django.contrib import admin
 from rest_framework import routers
 from rest_framework_swagger.views import get_swagger_view
 
-from api.views import FileViewSet
+from api.views import FileViewSet, DownloadViewSet
 router = routers.DefaultRouter()
-router.register(r'^file',FileViewSet)
 
+router.register(r'^file', FileViewSet)
+router.register(r'^download',DownloadViewSet)
 
 schema_view = get_swagger_view(title='File upload APi')
-
-urlpatterns = [
-
-]
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api_auth/',include('rest_framework.urls', namespace="rest_framework")),
     url(r'^',include(router.urls)),
     url(r'^help', schema_view),
+
 ]
 # Add media paths to urls
 if settings.DEBUG:
