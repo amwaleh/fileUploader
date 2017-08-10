@@ -27,7 +27,8 @@ router.register(r'^file',FileViewSet)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api_auth/',include('rest_framework.urls', namespace="rest_framework")),
-    url(r'^',include(router.urls))
+    url(r'^',include(router.urls)),
 ]
+# Add media paths to urls
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
