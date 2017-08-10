@@ -6,6 +6,8 @@ class FileSerializer(ModelSerializer):
     '''
         Handles File upload serializer
     '''
+
     class Meta:
         model = File
         fields = ('id','title','file')
+

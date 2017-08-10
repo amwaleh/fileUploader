@@ -1,6 +1,7 @@
 from django.core.files.uploadedfile import SimpleUploadedFile
 from rest_framework.test import APITestCase
 from django.core.files import File
+from rest_framework import status
 import mock
 
 
@@ -13,3 +14,4 @@ class TestImportViewsets(APITestCase):
                 }
         response = self.client.post ('/file', Data)
         self.assertEqual(response.status_code,301)
+
