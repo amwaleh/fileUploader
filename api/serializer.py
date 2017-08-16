@@ -13,5 +13,3 @@ class FileSerializer(ModelSerializer):
         fields = ('id','title','file', 'downloadpath')
 
 
-
-
